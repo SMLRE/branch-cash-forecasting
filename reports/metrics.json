@@ -1,0 +1,54 @@
+{
+  "series": 44,
+  "branches": 20,
+  "currencies": [
+    "EUR",
+    "GBP",
+    "NGN",
+    "USD"
+  ],
+  "gl_sources_rows": {
+    "ACQUIRED": 4368,
+    "LEGACY": 23088
+  },
+  "backtest_origin": "2026-04-30",
+  "share_series_beating_naive": 0.8636,
+  "median_mae_improvement_vs_naive": 0.1488,
+  "interval_coverage_mean": 0.7489,
+  "position_error_10d_median_pct_of_vault": 0.1025,
+  "by_currency": [
+    {
+      "currency": "EUR",
+      "series": 8,
+      "rel_mae_median": 0.934,
+      "coverage": 0.756,
+      "position_err": 0.096
+    },
+    {
+      "currency": "GBP",
+      "series": 8,
+      "rel_mae_median": 0.919,
+      "coverage": 0.691,
+      "position_err": 0.071
+    },
+    {
+      "currency": "NGN",
+      "series": 20,
+      "rel_mae_median": 0.776,
+      "coverage": 0.768,
+      "position_err": 0.103
+    },
+    {
+      "currency": "USD",
+      "series": 8,
+      "rel_mae_median": 0.903,
+      "coverage": 0.753,
+      "position_err": 0.113
+    }
+  ],
+  "live_outlook_actions": {
+    "OK": 31,
+    "REPLENISH": 12,
+    "WATCH": 1
+  }
+}
