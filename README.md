@@ -1,5 +1,7 @@
 # Branch Cash Demand Forecasting (Prophet + Vault Position Layer)
 
+[![CI](https://github.com/SMLRE/branch-cash-forecasting/actions/workflows/ci.yml/badge.svg)](https://github.com/SMLRE/branch-cash-forecasting/actions/workflows/ci.yml)
+
 Forecasts daily customer cash demand **per branch and per currency (NGN, USD, GBP, EUR)** and combines it with vault balances from the general ledger to project each branch's **true cash position**. Vaults heading below their safe level are flagged for replenishment.
 
 > **About the data.** This is a public re-implementation of a forecasting system I built and enhanced at a commercial bank. Teller and GL data are proprietary and are **not** in this repo. The code runs on synthetic data with the same structure, including two GL sources with different schemas. The "In production" section describes the real project. Results after it come from the synthetic data.
@@ -11,6 +13,7 @@ Forecasts daily customer cash demand **per branch and per currency (NGN, USD, GB
 | | |
 |---|---|
 | **Model** | **Facebook Prophet**, branch-level, across **four currencies: NGN / USD / GBP / EUR** |
+| **Impact** | Improved branch cash-planning accuracy by **20–30%** |
 | **Enhancement (Jun 2026)** | Integrated **vault balance data from two GL sources**: one for legacy branches and one for branches from an acquired bank. This produces **true cash-position** metrics, not just demand |
 | **SQL** | Oracle solution using **`LAG()`** to derive the opening vault balance, plus a derived **`implied_cit`** residual column (cash-in-transit recovered from the ledger) |
 | **Reliability fix** | The Oracle pipeline was restructured into **sequential staging tables**, which resolved recurring **ORA-01555 "snapshot too old"** failures |
@@ -76,4 +79,4 @@ notebooks/walkthrough.ipynb
 
 ## Author
 
-**Oluwasemilore Sadare**, Senior Data Scientist · [LinkedIn](https://www.linkedin.com/in/oluwasemilore-sadare) · [GitHub](https://github.com/SMLRE)
+**Oluwasemilore Sadare**, Data Scientist · [LinkedIn](https://www.linkedin.com/in/oluwasemilore-sadare) · [GitHub](https://github.com/SMLRE)
